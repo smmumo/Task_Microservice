@@ -1,0 +1,12 @@
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/ProductService/Product.Domain/bin/Debug/net8.0/Product.Domain.deps.json
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/ProductService/Product.Domain/bin/Debug/net8.0/Product.Domain.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/ProductService/Product.Domain/bin/Debug/net8.0/Product.Domain.pdb
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/ProductService/Product.Domain/obj/Debug/net8.0/Product.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/ProductService/Product.Domain/obj/Debug/net8.0/Product.Domain.AssemblyInfoInputs.cache
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/ProductService/Product.Domain/obj/Debug/net8.0/Product.Domain.AssemblyInfo.cs
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/ProductService/Product.Domain/obj/Debug/net8.0/Product.Domain.csproj.CoreCompileInputs.cache
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/ProductService/Product.Domain/obj/Debug/net8.0/Product.Domain.sourcelink.json
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/ProductService/Product.Domain/obj/Debug/net8.0/Product.Domain.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/ProductService/Product.Domain/obj/Debug/net8.0/refint/Product.Domain.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/ProductService/Product.Domain/obj/Debug/net8.0/Product.Domain.pdb
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/ProductService/Product.Domain/obj/Debug/net8.0/ref/Product.Domain.dll

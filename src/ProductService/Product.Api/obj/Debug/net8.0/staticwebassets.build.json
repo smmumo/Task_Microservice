@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "NKd9wCSeL18vIzHOlcLxxDnR07AmPjAkDlhx+a+abEU=",
-  "Source": "Order.Api",
-  "BasePath": "_content/Order.Api",
+  "Hash": "p5WZxqlOPYSCQ0PZrGSmrf7ncbWxMgvnPjbKQH9i/j4=",
+  "Source": "Product.Api",
+  "BasePath": "_content/Product.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

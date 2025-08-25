@@ -271,3 +271,4 @@
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Serilog.dll
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Serilog.Sinks.Console.dll
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Serilog.Sinks.File.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/obj/Debug/net8.0/Order.Api.sourcelink.json

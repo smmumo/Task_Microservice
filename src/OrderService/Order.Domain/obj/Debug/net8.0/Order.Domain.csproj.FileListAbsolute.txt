@@ -9,3 +9,4 @@
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Domain/obj/Debug/net8.0/refint/Order.Domain.dll
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Domain/obj/Debug/net8.0/Order.Domain.pdb
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Domain/obj/Debug/net8.0/ref/Order.Domain.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Domain/obj/Debug/net8.0/Order.Domain.sourcelink.json

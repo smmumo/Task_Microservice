@@ -1,25 +1,10 @@
 
 
-using Application.Abstractions.Messaging;
 using Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
-//builder.Services.AddScoped<ICommandHandler<DeleteCustomerCommand, DeleteCustomerResponse>, DeleteCustomerCommandHandler>();
-
 //instead of above, adding Scrutor 
-// builder.Services.Scan(scan => scan.FromAssembliesOf(typeof(Program))
-//     .AddClasses(classes => classes.AssignableTo(typeof(IQueryHandler<,>)), publicOnly: false)
-//     .AsImplementedInterfaces()
-//     .WithScopedLifetime()
-//     .AddClasses(classes => classes.AssignableTo(typeof(ICommandHandler<,>)), publicOnly: false)
-//     .AsImplementedInterfaces()
-//     .WithScopedLifetime()
-//     .AddClasses(classes => classes.AssignableTo(typeof(ICommandHandler<,>)), publicOnly: false)
-//     .AsImplementedInterfaces()
-//     .WithScopedLifetime());
-
 
 builder.Services.AddControllers();
 

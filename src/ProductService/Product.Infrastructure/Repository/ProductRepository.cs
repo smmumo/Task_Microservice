@@ -25,5 +25,15 @@ namespace Product.Infrastructure.Repository
         {
             _dbContext.Set<Products>().Remove(product);
         }
+
+        public async Task<Products?> GetByIdAsync(Guid id)
+        {
+            return await _dbContext.Set<Products>().FindAsync(id);
+        }
+
+        public void Update(Products product)
+        {
+            _dbContext.Set<Products>().Update(product);
+        }
     }
 }

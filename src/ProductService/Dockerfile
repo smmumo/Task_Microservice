@@ -1,27 +1,31 @@
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+
+FROM ubuntu:24.04 AS builder
+
+# install the .NET 8 SDK from the Ubuntu archive
+# (no need to clean the apt cache as this is an unpublished stage)
+RUN apt-get update && apt-get install -y dotnet8 ca-certificates
+RUN apt-get install -y bash
+
+# add your application code
+WORKDIR /source
+# using https://github.com/Azure-Samples/dotnetcore-docs-hello-world
+#COPY . .
+COPY ["Product.Api", "Product.Api/"]
+COPY ["Product.Application", "Product.Application/"]
+COPY ["Product.Infrastructure", "Product.Infrastructure/"]
+COPY ["Product.Domain", "Product.Domain/"]
+
+#RUN dotnet restore "./Product.Api/Product.Api.csproj"
+# publish your ASP.NET app
+#RUN dotnet publish -c Release -o /app --self-contained false
+RUN dotnet publish Product.Api/Product.Api.csproj -c Release -o  /app --self-contained false
+
+FROM ubuntu.azurecr.io/dotnet-aspnet:8.0-24.04_stable
 
 WORKDIR /app
+COPY --from=builder /app ./
+
+ENV PORT 8080
 EXPOSE 8080
-EXPOSE 8081
 
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-ARG BUILD_CONFIGURATION=Release
-WORKDIR /src
-COPY ["Product.Api/Product.Api.csproj", "Product.Api/"]
-COPY ["Product.Application/Product.Application.csproj", "Product.Application/"]
-COPY ["Product.Infrastructure/Product.Infrastructure.csproj", "Product.Infrastructure/"]
-COPY ["Product.Domain/Product.Domain.csproj", "Product.Domain/"]
-
-RUN dotnet restore "./Product.Api/Product.Api.csproj"
-COPY . .
-WORKDIR "/src/Product.Api"
-RUN dotnet build "./Product.Api.csproj" -c $BUILD_CONFIGURATION -o /app/build
-
-FROM build AS publish
-ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./Product.Api.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
-
-FROM base AS final
-WORKDIR /app
-COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "Product.Api.dll"]

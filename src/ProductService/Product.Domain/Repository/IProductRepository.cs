@@ -12,6 +12,6 @@ namespace Product.Domain.Repository
         void Add(Products product);
         void Delete(Products product);
         Task<Products?> GetByIdAsync(Guid id);
-        Task UpdateAsync(Products product);
+        void Update(Products product);
     }
 }

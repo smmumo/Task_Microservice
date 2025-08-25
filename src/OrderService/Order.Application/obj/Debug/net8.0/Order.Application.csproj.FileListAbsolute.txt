@@ -15,3 +15,4 @@
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Application/obj/Debug/net8.0/Order.Application.pdb
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Application/obj/Debug/net8.0/Order.Application.genruntimeconfig.cache
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Application/obj/Debug/net8.0/ref/Order.Application.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Application/obj/Debug/net8.0/Order.Application.sourcelink.json

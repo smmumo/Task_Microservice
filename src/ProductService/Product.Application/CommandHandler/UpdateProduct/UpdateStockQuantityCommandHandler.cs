@@ -36,7 +36,7 @@ namespace Product.Application.CommandHandler.UpdateProduct
                 return result;
             }
 
-            await _productRepository.UpdateAsync(product);
+             _productRepository.Update(product);
 
             await _unitOfWork.SaveChangesAsync(cancellationToken);
 
