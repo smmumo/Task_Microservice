@@ -1,0 +1,11 @@
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Domain/obj/Debug/net8.0/Order.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Domain/obj/Debug/net8.0/Order.Domain.AssemblyInfoInputs.cache
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Domain/obj/Debug/net8.0/Order.Domain.AssemblyInfo.cs
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Domain/obj/Debug/net8.0/Order.Domain.csproj.CoreCompileInputs.cache
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Domain/bin/Debug/net8.0/Order.Domain.deps.json
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Domain/bin/Debug/net8.0/Order.Domain.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Domain/bin/Debug/net8.0/Order.Domain.pdb
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Domain/obj/Debug/net8.0/Order.Domain.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Domain/obj/Debug/net8.0/refint/Order.Domain.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Domain/obj/Debug/net8.0/Order.Domain.pdb
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Domain/obj/Debug/net8.0/ref/Order.Domain.dll

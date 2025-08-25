@@ -1,0 +1,11 @@
+/home/smumo/Projects/stockapp/stockapp-erp/src/Shared/Application/bin/Debug/net8.0/Application.deps.json
+/home/smumo/Projects/stockapp/stockapp-erp/src/Shared/Application/bin/Debug/net8.0/Application.dll
+/home/smumo/Projects/stockapp/stockapp-erp/src/Shared/Application/bin/Debug/net8.0/Application.pdb
+/home/smumo/Projects/stockapp/stockapp-erp/src/Shared/Application/obj/Debug/net8.0/Application.GeneratedMSBuildEditorConfig.editorconfig
+/home/smumo/Projects/stockapp/stockapp-erp/src/Shared/Application/obj/Debug/net8.0/Application.AssemblyInfoInputs.cache
+/home/smumo/Projects/stockapp/stockapp-erp/src/Shared/Application/obj/Debug/net8.0/Application.AssemblyInfo.cs
+/home/smumo/Projects/stockapp/stockapp-erp/src/Shared/Application/obj/Debug/net8.0/Application.csproj.CoreCompileInputs.cache
+/home/smumo/Projects/stockapp/stockapp-erp/src/Shared/Application/obj/Debug/net8.0/Application.dll
+/home/smumo/Projects/stockapp/stockapp-erp/src/Shared/Application/obj/Debug/net8.0/refint/Application.dll
+/home/smumo/Projects/stockapp/stockapp-erp/src/Shared/Application/obj/Debug/net8.0/Application.pdb
+/home/smumo/Projects/stockapp/stockapp-erp/src/Shared/Application/obj/Debug/net8.0/ref/Application.dll

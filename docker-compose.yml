@@ -1,0 +1,39 @@
+version: '3.7'
+
+services:
+  order.services.api:
+    image: ${DOCKER_REGISTRY-}order.services.api
+    container_name: Order.Services.Api
+    build:
+      context: .
+      dockerfile: src/OrderService/Dockerfile
+    restart: always
+    ports:
+      - 5000:8080
+      - 5001:8081
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+
+  product.services.api:
+    image: ${DOCKER_REGISTRY-}product.services.api
+    container_name: Product.Services.Api
+    build:
+      context: .
+      dockerfile: src/ProductService/Dockerfile
+    restart: always
+    ports:
+      - 6000:8080
+      - 6001:8081
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development" 
+
+  task.service.queue:
+    image: rabbitmq:management
+    container_name: Task.Service.Queue
+    hostname: task-service-queue
+    volumes:
+        - ./.containers/queue/data/:/var/lib/rabbitmq
+        - ./.containers/queue/log/:/var/log/rabbitmq
+    environment:
+        RABBITMQ_DEFAULT_USER: guest
+        RABBITMQ_DEFAULT_PASS: guest

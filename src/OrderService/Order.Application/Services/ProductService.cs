@@ -1,0 +1,13 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Order.Application.DTO;
+
+namespace Order.Application.Services
+{
+    public interface IProductService
+    {
+        Task<ProductDto?> GetProduct(Guid productId);
+    }
+}

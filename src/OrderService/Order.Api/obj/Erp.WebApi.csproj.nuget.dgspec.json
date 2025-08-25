@@ -1,0 +1,953 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Erp.WebApi/Erp.WebApi.csproj": {}
+  },
+  "projects": {
+    "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Erp.WebApi/Erp.WebApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Erp.WebApi/Erp.WebApi.csproj",
+        "projectName": "Erp.WebApi",
+        "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Erp.WebApi/Erp.WebApi.csproj",
+        "packagesPath": "/home/smumo/.nuget/packages/",
+        "outputPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Erp.WebApi/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/smumo/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Infrastructure/Infrastructure.csproj": {
+                "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Infrastructure/Infrastructure.csproj"
+              },
+              "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Persistence/Persistence.csproj": {
+                "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Persistence/Persistence.csproj"
+              },
+              "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Users/Modules.Users.Application/Modules.Users.Application.csproj": {
+                "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Users/Modules.Users.Application/Modules.Users.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.0, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.6.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.117/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Expenses/Modules.Expenses.Domain/Modules.Expenses.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Expenses/Modules.Expenses.Domain/Modules.Expenses.Domain.csproj",
+        "projectName": "Modules.Expenses.Domain",
+        "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Expenses/Modules.Expenses.Domain/Modules.Expenses.Domain.csproj",
+        "packagesPath": "/home/smumo/.nuget/packages/",
+        "outputPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Expenses/Modules.Expenses.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/smumo/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/SharedModule/SharedModule.Domain/SharedModule.Domain.csproj": {
+                "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/SharedModule/SharedModule.Domain/SharedModule.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.117/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Infrastructure/Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Infrastructure/Infrastructure.csproj",
+        "projectName": "Infrastructure",
+        "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Infrastructure/Infrastructure.csproj",
+        "packagesPath": "/home/smumo/.nuget/packages/",
+        "outputPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/smumo/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.6.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.8.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.117/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Orders/Modules.Orders.Domain/Modules.Orders.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Orders/Modules.Orders.Domain/Modules.Orders.Domain.csproj",
+        "projectName": "Modules.Orders.Domain",
+        "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Orders/Modules.Orders.Domain/Modules.Orders.Domain.csproj",
+        "packagesPath": "/home/smumo/.nuget/packages/",
+        "outputPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Orders/Modules.Orders.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/smumo/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/SharedModule/SharedModule.Domain/SharedModule.Domain.csproj": {
+                "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/SharedModule/SharedModule.Domain/SharedModule.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.117/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Payments/Modules.Payments.Domain/Modules.Payments.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Payments/Modules.Payments.Domain/Modules.Payments.Domain.csproj",
+        "projectName": "Modules.Payments.Domain",
+        "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Payments/Modules.Payments.Domain/Modules.Payments.Domain.csproj",
+        "packagesPath": "/home/smumo/.nuget/packages/",
+        "outputPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Payments/Modules.Payments.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/smumo/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/SharedModule/SharedModule.Domain/SharedModule.Domain.csproj": {
+                "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/SharedModule/SharedModule.Domain/SharedModule.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.117/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Persistence/Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Persistence/Persistence.csproj",
+        "projectName": "Persistence",
+        "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Persistence/Persistence.csproj",
+        "packagesPath": "/home/smumo/.nuget/packages/",
+        "outputPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Persistence/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/smumo/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Expenses/Modules.Expenses.Domain/Modules.Expenses.Domain.csproj": {
+                "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Expenses/Modules.Expenses.Domain/Modules.Expenses.Domain.csproj"
+              },
+              "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Orders/Modules.Orders.Domain/Modules.Orders.Domain.csproj": {
+                "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Orders/Modules.Orders.Domain/Modules.Orders.Domain.csproj"
+              },
+              "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Payments/Modules.Payments.Domain/Modules.Payments.Domain.csproj": {
+                "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Payments/Modules.Payments.Domain/Modules.Payments.Domain.csproj"
+              },
+              "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Products/Modules.Product.Domain/Modules.Product.Domain.csproj": {
+                "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Products/Modules.Product.Domain/Modules.Product.Domain.csproj"
+              },
+              "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Purchases/Modules.Purchases.Domain/Modules.Purchases.Domain.csproj": {
+                "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Purchases/Modules.Purchases.Domain/Modules.Purchases.Domain.csproj"
+              },
+              "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Sales/Modules.Sales.Domain/Modules.Sales.Domain.csproj": {
+                "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Sales/Modules.Sales.Domain/Modules.Sales.Domain.csproj"
+              },
+              "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/SharedModule/Shared.Application/Shared.Application.csproj": {
+                "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/SharedModule/Shared.Application/Shared.Application.csproj"
+              },
+              "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/SharedModule/SharedModule.Domain/SharedModule.Domain.csproj": {
+                "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/SharedModule/SharedModule.Domain/SharedModule.Domain.csproj"
+              },
+              "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Shops/Modules.Shops.Domain/Modules.Shops.Domain.csproj": {
+                "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Shops/Modules.Shops.Domain/Modules.Shops.Domain.csproj"
+              },
+              "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Users/Modules.Users.Application/Modules.Users.Application.csproj": {
+                "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Users/Modules.Users.Application/Modules.Users.Application.csproj"
+              },
+              "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Users/Modules.Users.Domain/Modules.Users.Domain.csproj": {
+                "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Users/Modules.Users.Domain/Modules.Users.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "MySql.Data.EntityFramework": {
+              "target": "Package",
+              "version": "[8.3.0, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql.Json.Microsoft": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.117/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Products/Modules.Product.Domain/Modules.Product.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Products/Modules.Product.Domain/Modules.Product.Domain.csproj",
+        "projectName": "Modules.Product.Domain",
+        "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Products/Modules.Product.Domain/Modules.Product.Domain.csproj",
+        "packagesPath": "/home/smumo/.nuget/packages/",
+        "outputPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Products/Modules.Product.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/smumo/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/SharedModule/SharedModule.Domain/SharedModule.Domain.csproj": {
+                "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/SharedModule/SharedModule.Domain/SharedModule.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.117/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Purchases/Modules.Purchases.Domain/Modules.Purchases.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Purchases/Modules.Purchases.Domain/Modules.Purchases.Domain.csproj",
+        "projectName": "Modules.Purchases.Domain",
+        "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Purchases/Modules.Purchases.Domain/Modules.Purchases.Domain.csproj",
+        "packagesPath": "/home/smumo/.nuget/packages/",
+        "outputPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Purchases/Modules.Purchases.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/smumo/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Products/Modules.Product.Domain/Modules.Product.Domain.csproj": {
+                "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Products/Modules.Product.Domain/Modules.Product.Domain.csproj"
+              },
+              "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/SharedModule/SharedModule.Domain/SharedModule.Domain.csproj": {
+                "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/SharedModule/SharedModule.Domain/SharedModule.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.117/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Sales/Modules.Sales.Domain/Modules.Sales.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Sales/Modules.Sales.Domain/Modules.Sales.Domain.csproj",
+        "projectName": "Modules.Sales.Domain",
+        "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Sales/Modules.Sales.Domain/Modules.Sales.Domain.csproj",
+        "packagesPath": "/home/smumo/.nuget/packages/",
+        "outputPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Sales/Modules.Sales.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/smumo/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.117/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/SharedModule/Shared.Application/Shared.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/SharedModule/Shared.Application/Shared.Application.csproj",
+        "projectName": "Shared.Application",
+        "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/SharedModule/Shared.Application/Shared.Application.csproj",
+        "packagesPath": "/home/smumo/.nuget/packages/",
+        "outputPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/SharedModule/Shared.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/smumo/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "MySql.Data.EntityFramework": {
+              "target": "Package",
+              "version": "[8.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.117/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/SharedModule/SharedModule.Domain/SharedModule.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/SharedModule/SharedModule.Domain/SharedModule.Domain.csproj",
+        "projectName": "SharedModule.Domain",
+        "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/SharedModule/SharedModule.Domain/SharedModule.Domain.csproj",
+        "packagesPath": "/home/smumo/.nuget/packages/",
+        "outputPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/SharedModule/SharedModule.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/smumo/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.117/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Shops/Modules.Shops.Domain/Modules.Shops.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Shops/Modules.Shops.Domain/Modules.Shops.Domain.csproj",
+        "projectName": "Modules.Shops.Domain",
+        "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Shops/Modules.Shops.Domain/Modules.Shops.Domain.csproj",
+        "packagesPath": "/home/smumo/.nuget/packages/",
+        "outputPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Shops/Modules.Shops.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/smumo/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/SharedModule/SharedModule.Domain/SharedModule.Domain.csproj": {
+                "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/SharedModule/SharedModule.Domain/SharedModule.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.117/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Users/Modules.Users.Application/Modules.Users.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Users/Modules.Users.Application/Modules.Users.Application.csproj",
+        "projectName": "Modules.Users.Application",
+        "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Users/Modules.Users.Application/Modules.Users.Application.csproj",
+        "packagesPath": "/home/smumo/.nuget/packages/",
+        "outputPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Users/Modules.Users.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/smumo/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.117/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Users/Modules.Users.Domain/Modules.Users.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Users/Modules.Users.Domain/Modules.Users.Domain.csproj",
+        "projectName": "Modules.Users.Domain",
+        "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Users/Modules.Users.Domain/Modules.Users.Domain.csproj",
+        "packagesPath": "/home/smumo/.nuget/packages/",
+        "outputPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Users/Modules.Users.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/smumo/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/SharedModule/SharedModule.Domain/SharedModule.Domain.csproj": {
+                "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/SharedModule/SharedModule.Domain/SharedModule.Domain.csproj"
+              },
+              "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Shops/Modules.Shops.Domain/Modules.Shops.Domain.csproj": {
+                "projectPath": "/home/smumo/Projects/stockapp/stockapp-erp/src/Modules/Shops/Modules.Shops.Domain/Modules.Shops.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.117/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
