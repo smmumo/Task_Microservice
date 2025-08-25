@@ -1,5 +1,7 @@
 OrderService/Order.Api/bin
 OrderService/Order.Api/obj
+OrderService/Order.Infrastructure/obj
+OrderService/Order.Infrastructure/bin
 
 OrderService/Order.Domain/bin
 OrderService/Order.Domain/obj
@@ -9,6 +11,9 @@ OrderService/Order.Application/obj
 
 ProductService/Product.Api/bin
 ProductService/Product.Api/obj
+
+ProductService/Product.Infrastructure/obj
+ProductService/Product.Infrastructure/bin
 
 ProductService/Product.Domain/bin
 ProductService/Product.Domain/obj
