@@ -2,28 +2,26 @@ version: '3.7'
 
 services:
   order.services.api:
-    image: ${DOCKER_REGISTRY-}order.services.api
-    container_name: Order.Services.Api
+    image: order.services
+    container_name: order.services.api
     build:
       context: .
       dockerfile: src/OrderService/Dockerfile
     restart: always
     ports:
-      - 5000:8080
-      - 5001:8081
+      - 5000:8080     
     environment:
       ASPNETCORE_ENVIRONMENT: "Development"
 
   product.services.api:
-    image: ${DOCKER_REGISTRY-}product.services.api
-    container_name: Product.Services.Api
+    image: product.services
+    container_name: product.services.api
     build:
       context: .
       dockerfile: src/ProductService/Dockerfile
     restart: always
     ports:
-      - 6000:8080
-      - 6001:8081
+      - 6000:8080    
     environment:
       ASPNETCORE_ENVIRONMENT: "Development" 
 

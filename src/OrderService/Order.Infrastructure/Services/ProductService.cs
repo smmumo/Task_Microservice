@@ -13,17 +13,16 @@ namespace Order.Infrastructure.Services
     public class ProductService : IProductService
     {
          private readonly HttpClient _Httpclient ;
-         private readonly string BaseUrl = "http://localhost:5100/ " ;
-
+         //private readonly string BaseUrl = "http://localhost:5100/ " ;
         //using docker container
-        //private readonly string BaseUrl1 = "http://Product.Services.Api/ " ;
+        private readonly string BaseUrl = "http://product.services.api:6000/ " ;
         public ProductService(HttpClient httpClient)
         {
             _Httpclient = httpClient;
         }
         public async Task<ProductDto?> GetProduct(Guid productId)
         {
-            string Url = $"{BaseUrl}/products/{productId}";
+            string Url = $"{BaseUrl}products/{productId}";
 
             var httpResponse = await _Httpclient.GetAsync(Url);           
 

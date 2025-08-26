@@ -11,7 +11,7 @@ COPY . .
 
 RUN ls -la
 # publish your ASP.NET app
-RUN dotnet publish Product.Api/Product.Api.csproj -c Release -o /app --self-contained false
+RUN dotnet publish Order.Api/Order.Api.csproj -c Release -o /app --self-contained false
 
 FROM ubuntu/dotnet-aspnet:8.0-24.04_stable
 WORKDIR /app
@@ -20,4 +20,4 @@ COPY --from=builder /app ./
 ENV PORT 8080
 EXPOSE 8080
 
-ENTRYPOINT ["dotnet", "/app/Product.Api.dll"]
+ENTRYPOINT ["dotnet", "/app/Order.Api.dll"]
