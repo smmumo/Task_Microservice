@@ -56,13 +56,18 @@ namespace Order.Application.CommandHandler.CreateOrder
 
             _orderRepository.Add(order.Value);
 
-            //Todo , introduce outbox pattern to controll transaction            
-            bool isSuccess = await _productService.ReserveProduct(new UpdateProductQuantityRequest(request.Qty, request.ProductId));
+             await _unitOfWork.SaveChangesAsync(cancellationToken);  
+            //Todo , introduce distributed transaction eg saga            
+            bool IsReservationSuccess = await _productService.ReserveProduct(new UpdateProductQuantityRequest(request.Qty, request.ProductId));
 
-            if(isSuccess)
+            //introduce retries , before rollback order creation
+            if (!IsReservationSuccess)
             {
-                await _unitOfWork.SaveChangesAsync(cancellationToken);  
-            }                        
+                // If reservation fails, we need to rollback the order creation               
+                _orderRepository.Delete(order.Value);
+                await _unitOfWork.SaveChangesAsync(cancellationToken);
+                return Result.Failure(new Error("Product.ReservationFailed", "Failed to reserve product"));
+            }
 
             return Result.Success();            
             
