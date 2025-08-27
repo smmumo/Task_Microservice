@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Application.Abstractions.Messaging;
 using Order.Application.Data;
+using Order.Application.DTO;
 using Order.Application.Services;
 using Order.Domain.Core;
 using Order.Domain.Core.Results;
@@ -55,9 +56,16 @@ namespace Order.Application.CommandHandler.CreateOrder
 
             _orderRepository.Add(order.Value);
 
-            await _unitOfWork.SaveChangesAsync(cancellationToken);
+            //Todo , introduce outbox pattern to controll transaction            
+            bool isSuccess = await _productService.ReserveProduct(new UpdateProductQuantityRequest(request.Qty, request.ProductId));
 
-            return Result.Success();
+            if(isSuccess)
+            {
+                await _unitOfWork.SaveChangesAsync(cancellationToken);  
+            }                        
+
+            return Result.Success();            
+            
         }
     }
 }

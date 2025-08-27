@@ -31,9 +31,7 @@ namespace Product.Domain.Entity
                 Quantity = quantity
             };
 
-            return Result.Success(product);       
-
-           
+            return Result.Success(product);     
         }
 
         public Result UpdateStockQuantity(decimal newQuantity)
@@ -43,7 +41,7 @@ namespace Product.Domain.Entity
                 return Result.Failure(new Error("Product.InvalidStockQuantity", "Quantity must be greater than zero."));
             }
 
-            Quantity = newQuantity;
+            Quantity -= newQuantity;
             return Result.Success();
         }
            

@@ -9,5 +9,6 @@ namespace Order.Application.Services
     public interface IProductService
     {
         Task<ProductDto?> GetProduct(Guid productId);
+        Task<bool> ReserveProduct(UpdateProductQuantityRequest updateProductQuantityRequest);
     }
 }

@@ -65,7 +65,8 @@ namespace Order.Api.Controllers;
                 return BadRequest(result.Error);
             }
 
-            return CreatedAtAction(nameof(GetOrderById), new { id = command.ProductId }, command);
+            return StatusCode(201);
+            //CreatedAtAction(nameof(GetOrderById), new { id = command.ProductId }, command);
         }
     }
     

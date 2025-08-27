@@ -1,12 +1,11 @@
-version: '3.7'
-
+#version: '3.7'
 services:
   order.services.api:
     image: order.services
     container_name: order.services.api
     build:
-      context: .
-      dockerfile: src/OrderService/Dockerfile
+      context: ./src/OrderService
+      dockerfile: Dockerfile
     restart: always
     ports:
       - 5000:8080     
@@ -17,8 +16,8 @@ services:
     image: product.services
     container_name: product.services.api
     build:
-      context: .
-      dockerfile: src/ProductService/Dockerfile
+      context: ./src/ProductService
+      dockerfile: Dockerfile
     restart: always
     ports:
       - 6000:8080    

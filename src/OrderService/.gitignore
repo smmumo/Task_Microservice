@@ -1,0 +1,17 @@
+./Order.Api/bin/
+./Order.Api/obj/
+
+./Order.Infrastructure/obj/
+./Order.Infrastructure/bin/
+
+./Order.Domain/bin/
+./Order.Domain/obj/
+
+./Order.Application/bin/
+./Order.Application/obj/
+
+.vs/
+
+./Order.Domain/obj/Debug/
+./Order.Application/obj/Debug/
+./Order.Infrastructure/obj/Debug/

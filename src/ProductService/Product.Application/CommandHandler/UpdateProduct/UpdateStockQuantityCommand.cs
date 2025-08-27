@@ -7,5 +7,5 @@ using Product.Domain.Core;
 
 namespace Product.Application.CommandHandler.UpdateProduct
 {
-    public record UpdateStockQuantityCommand(Guid ProductId, int Quantity) : ICommand<Result>;
+    public record UpdateStockQuantityCommand(Guid ProductId, decimal Quantity) : ICommand<Result>;
 }
