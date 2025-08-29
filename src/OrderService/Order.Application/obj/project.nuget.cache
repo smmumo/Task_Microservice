@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/dOZw0A7A3lPBZN2BAK12wVuMw3Fo249MyTkABuvyz+yH2mT8sjOZaF++pIEirm7Vvh5SlwckGlYFbkdVY1+ZQ==",
+  "dgSpecHash": "fU4WDQMw/MtdVmg4M8ZwWrAEKkeN4nwxVNAiTARkQbaeZcC5rDvaBAADp4A08hEobmmjx04d/dS77moUZRGbxg==",
   "success": true,
   "projectFilePath": "/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Application/Order.Application.csproj",
   "expectedPackageFiles": [
@@ -117,6 +117,9 @@
     "/home/smumo/.nuget/packages/nuget.protocol/6.9.1/nuget.protocol.6.9.1.nupkg.sha512",
     "/home/smumo/.nuget/packages/nuget.versioning/6.9.1/nuget.versioning.6.9.1.nupkg.sha512",
     "/home/smumo/.nuget/packages/scrutor/6.0.1/scrutor.6.0.1.nupkg.sha512",
+    "/home/smumo/.nuget/packages/serilog/4.3.0/serilog.4.3.0.nupkg.sha512",
+    "/home/smumo/.nuget/packages/serilog.sinks.console/6.0.0/serilog.sinks.console.6.0.0.nupkg.sha512",
+    "/home/smumo/.nuget/packages/serilog.sinks.file/7.0.0/serilog.sinks.file.7.0.0.nupkg.sha512",
     "/home/smumo/.nuget/packages/system.codedom/5.0.0/system.codedom.5.0.0.nupkg.sha512",
     "/home/smumo/.nuget/packages/system.collections.immutable/7.0.0/system.collections.immutable.7.0.0.nupkg.sha512",
     "/home/smumo/.nuget/packages/system.composition/7.0.0/system.composition.7.0.0.nupkg.sha512",

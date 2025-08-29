@@ -37,7 +37,10 @@ namespace AuthService.Extensions;
         services.AddScoped<IPasswordHashChecker, PasswordHasher>();
         services.AddScoped<IPasswordHashChecker, PasswordHasher>();
 
-          services.AddScoped<IJwtProvider, JwtService>();
+        services.AddScoped<IUserRepository, UserRepository>();       
+
+        services.AddScoped<IJwtProvider, JwtService>();
+        services.AddScoped<IAuthenticationService, AuthenticationService>();
 
         return services;
     }

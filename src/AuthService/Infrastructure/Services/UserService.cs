@@ -19,16 +19,19 @@ namespace AuthService.Infrastructure.Services
         private readonly IPasswordHasher _passwordHasher;          
         private readonly IUnitOfWork _unitOfWork;
         
+         private readonly ILogger<UserService> _logger;
        public UserService(IUserRepository userRepository,
-           IPasswordHasher passwordHasher,        
-           IUnitOfWork unitOfWork
-         )
-       {
-           _userRepository = userRepository;
+            IPasswordHasher passwordHasher,
+            IUnitOfWork unitOfWork,
+            ILogger<UserService> logger
+          )
+        {
+            _userRepository = userRepository;
             _passwordHasher = passwordHasher;
-          
             _unitOfWork = unitOfWork;
-          
+            _logger = logger;
+            _unitOfWork = unitOfWork;
+
             _unitOfWork = unitOfWork;
 
             _unitOfWork = unitOfWork;
@@ -40,6 +43,7 @@ namespace AuthService.Infrastructure.Services
 
             if (userExist != null)
             {
+                _logger.LogWarning("Attempt to create a user with an existing email: {Email}", request.Email);
                 return Result.Failure<Guid>(DomainErrors.User.EmailNotUnique);
             }
 
@@ -51,12 +55,15 @@ namespace AuthService.Infrastructure.Services
 
             if (user.IsFailure)
             {
+                _logger.LogError("User creation failed for email: {Email}. Error: {Error}", request.Email, user.Error);
                 return Result.Failure(user.Error);
-            }              
+            }             
 
-            _userRepository.Add(user.Value);
+            _userRepository.Add(user.Value);            
 
             await _unitOfWork.SaveChangesAsync();
+            
+             _logger.LogInformation("User created successfully: {Email}", request.Email);
 
             return Result.Success(user.Value.Id);
         }

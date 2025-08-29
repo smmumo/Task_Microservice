@@ -2,6 +2,7 @@
 
 using Application.Abstractions.Messaging;
 using Microsoft.Extensions.DependencyInjection;
+using Serilog;
 
 namespace Order.Application
 {
@@ -13,17 +14,7 @@ namespace Order.Application
         /// <param name="services">The service collection.</param>
         /// <returns>The same service collection.</returns>
         public static IServiceCollection AddOrderApplication(this IServiceCollection services)
-        {
-            // services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-
-            // services.AddMediatR(cfg =>
-            // {
-            //     cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
-
-            //    // cfg.AddOpenBehavior(typeof(ValidationBehaviour<,>));
-
-            //    // cfg.AddOpenBehavior(typeof(TransactionBehaviour<,>));
-            // });
+        {          
             
              services.Scan(scan => scan.FromAssembliesOf(typeof(DependencyInjection))
             .AddClasses(classes => classes.AssignableTo(typeof(IQueryHandler<,>)))
@@ -36,12 +27,12 @@ namespace Order.Application
             .AsImplementedInterfaces()
             .WithScopedLifetime());
           
-          //domain events
-            //   services.Scan(scan => scan.FromAssembliesOf(typeof(DependencyInjection))
-            //     .AddClasses(classes => classes.AssignableTo(typeof(IDomainEventHandler<>)))
-            //     .AsImplementedInterfaces()
-            //     .WithScopedLifetime()
-            //     );
+         Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Information()
+            .WriteTo.Console()
+            .WriteTo.File("logs/log-.txt", rollingInterval: RollingInterval.Day)
+            .Enrich.FromLogContext()   
+            .CreateLogger();
 
             return services;
         }

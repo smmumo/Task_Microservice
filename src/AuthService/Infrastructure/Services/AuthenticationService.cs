@@ -20,12 +20,14 @@ public class AuthenticationService : IAuthenticationService
     private readonly ITokenService _tokenService;
     private readonly IUnitOfWork _unitOfWork;
     private readonly ITokenRespository _tokenRespository;
+    private readonly ILogger<AuthenticationService> _logger;
     public AuthenticationService(IUserRepository userRepository,
         IPasswordHashChecker passwordHashChecker,
         IJwtProvider jwtprovider,
         ITokenService tokenService,
         IUnitOfWork unitOfWork,
-        ITokenRespository tokenRespository)
+        ITokenRespository tokenRespository,
+        ILogger<AuthenticationService> logger)
     {
         _userRepository = userRepository;
         _passwordHashChecker = passwordHashChecker;
@@ -34,6 +36,7 @@ public class AuthenticationService : IAuthenticationService
         _unitOfWork = unitOfWork;
         _tokenRespository = tokenRespository;
         _unitOfWork = unitOfWork;
+        _logger = logger;
     }
 
     public async Task<Result<TokenResponse>> Aunthenticate(LoginRequest request)
@@ -41,6 +44,7 @@ public class AuthenticationService : IAuthenticationService
         UserEntity? user = await _userRepository.GetByEmailAsync(request.Email);
         if (user is null)
         {
+            _logger.LogWarning("Authentication failed for email: {Email}. User not found.", request.Email);
             return Result.Failure<TokenResponse>(DomainErrors.User.NotFound);
         }
 
@@ -48,6 +52,7 @@ public class AuthenticationService : IAuthenticationService
 
         if (!passwordMatches)
         {
+            _logger.LogWarning("Authentication failed for email: {Email}. Invalid password.", request.Email);
             return Result.Failure<TokenResponse>(DomainErrors.Authentication.InvalidEmailOrPassword);
         }
 
@@ -80,6 +85,7 @@ public class AuthenticationService : IAuthenticationService
 
         if (savedRefreshToken is null)
         {
+            _logger.LogWarning("Refresh token not found or invalid for email: {Email}.", Email);
             return Result.Failure<TokenResponse>(DomainErrors.Authentication.InvalidToken);
         }
 
@@ -98,7 +104,10 @@ public class AuthenticationService : IAuthenticationService
         // saving refresh token to the db  
         var refreshToken = TokenEntity.Create(newJwtToken.Refresh_Token, Email);
 
+
         _tokenRespository.Add(refreshToken);
+        
+        _logger.LogInformation("Refresh token generated successfully for email: {Email}.", Email);
 
         await _unitOfWork.SaveChangesAsync();
 

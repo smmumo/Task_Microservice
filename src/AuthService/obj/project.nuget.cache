@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "uHe6JZJ3Fkf0ds2dSpIt7Ml/kgY9KB9z/OWhhzhvM/V4STY0eMd33pWUOZsgIG3KCx6SOSm9Rq7iWFw3lt4f4g==",
+  "dgSpecHash": "ODNCieqYUofRD9CpKQqYenU+wryOfXQ/lTp1M3LzSOxnPPR1M6WvVg5Coc5wItBDnBVxTO25gOzR/Ytl46SngA==",
   "success": true,
   "projectFilePath": "/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/AuthService/AuthService.csproj",
   "expectedPackageFiles": [
@@ -48,6 +48,9 @@
     "/home/smumo/.nuget/packages/microsoft.identitymodel.tokens/7.1.2/microsoft.identitymodel.tokens.7.1.2.nupkg.sha512",
     "/home/smumo/.nuget/packages/microsoft.openapi/1.6.14/microsoft.openapi.1.6.14.nupkg.sha512",
     "/home/smumo/.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",
+    "/home/smumo/.nuget/packages/serilog/4.3.0/serilog.4.3.0.nupkg.sha512",
+    "/home/smumo/.nuget/packages/serilog.sinks.console/6.0.0/serilog.sinks.console.6.0.0.nupkg.sha512",
+    "/home/smumo/.nuget/packages/serilog.sinks.file/7.0.0/serilog.sinks.file.7.0.0.nupkg.sha512",
     "/home/smumo/.nuget/packages/swashbuckle.aspnetcore/6.6.2/swashbuckle.aspnetcore.6.6.2.nupkg.sha512",
     "/home/smumo/.nuget/packages/swashbuckle.aspnetcore.swagger/6.6.2/swashbuckle.aspnetcore.swagger.6.6.2.nupkg.sha512",
     "/home/smumo/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.6.2/swashbuckle.aspnetcore.swaggergen.6.6.2.nupkg.sha512",

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LHqICz3DALWXNamYDe8/db2ne8lrc4Z8om0stISsGNvZogoxEdpyxlBS623GhSiZcuDoDCQkxP39AB8rol2nEw==",
+  "dgSpecHash": "Uuy2wE2HFxIJ3Gsj/UZHP9uyhm/Ye8lYcFJjOWsnEegAX7yzqtZR3tvqZ7ms+xihgnAl3775OekxUaJpinhBEA==",
   "success": true,
   "projectFilePath": "/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Infrastructure/Order.Infrastructure.csproj",
   "expectedPackageFiles": [

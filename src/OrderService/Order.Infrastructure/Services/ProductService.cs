@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using NuGet.Protocol;
 using Order.Application.DTO;
@@ -21,32 +22,32 @@ namespace Order.Infrastructure.Services;
         //private readonly string BaseUrl = "http://localhost:5100/Products" ;
         //using docker container
         private readonly string BaseUrl = "http://product.services.api:6000/Products/";
-        public ProductService(HttpClient httpClient)
+        private readonly ILogger<ProductService> _logger;
+        public ProductService(HttpClient httpClient, ILogger<ProductService> logger)
         {
             _Httpclient = httpClient;
+            _logger = logger;
         }
         public async Task<ProductDto?> GetProduct(Guid productId)
         {
             string Url = $"{BaseUrl}/{productId}";
 
             var httpResponse = await _Httpclient.GetAsync(Url);
-
-            using var log = new LoggerConfiguration().WriteTo.Console().CreateLogger();
+          
 
             if (!httpResponse.IsSuccessStatusCode)
             {
-                log.Information("Failed to retrieve product with ID {ProductId}", productId);
+                _logger.LogError("Failed to retrieve product with ID {ProductId}", productId);
                 return null;
             }
 
             var jsonResponse = await httpResponse.Content.ReadAsStringAsync();
             var productResponse = JsonSerializer.Deserialize<ProductDto>(jsonResponse);
 
-            log.Information(productResponse.ToJson());
+            _logger.LogInformation(productResponse.ToJson());
 
-            log.Information("Successfully retrieved product with ID {ProductId}", productId);
+            _logger.LogInformation("Successfully retrieved product with ID {ProductId}", productId);
             return productResponse;
-
 
         }   
 
@@ -60,13 +61,11 @@ namespace Order.Infrastructure.Services;
 
                 var httpResponse = await _Httpclient.PutAsync(url, httpContent);
 
-                 await httpResponse.Content.ReadAsStringAsync();              
-
-                 using var log = new LoggerConfiguration().WriteTo.Console().CreateLogger();
+                 await httpResponse.Content.ReadAsStringAsync();             
 
                 if (!httpResponse.IsSuccessStatusCode)
                 {
-                    log.Information("Failed to reserve product with ID {ProductId}", updateProductQuantityRequest.ProductId);
+                    _logger.LogError("Failed to reserve product with ID {ProductId}", updateProductQuantityRequest.ProductId);
                     return false;
                 }
                 return true;
