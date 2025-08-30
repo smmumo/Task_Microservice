@@ -1,6 +1,7 @@
 
 
 using System.Reflection;
+using AuthService.Domain;
 using AuthService.Domain.Repository;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +14,7 @@ namespace AuthService.Infrastructure.Persistence;
 /// </summary>
 public sealed class AuthDbContext : DbContext, IUnitOfWork
 {
+   
     public AuthDbContext(DbContextOptions options)
         : base(options)
     {
@@ -23,7 +25,12 @@ public sealed class AuthDbContext : DbContext, IUnitOfWork
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {        
-        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());       
+        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());   
+
+        // modelBuilder.Entity<UserEntity>().HasData(
+        //     new UserEntity {  Name = "Test User 1", Password= "Password1" },
+        //     new UserEntity {  Name = "Test User 2", Password= "Password2" }
+        // );    
         base.OnModelCreating(modelBuilder);
     }
 

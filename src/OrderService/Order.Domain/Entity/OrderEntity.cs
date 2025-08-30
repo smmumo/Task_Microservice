@@ -7,7 +7,7 @@ using Order.Domain.Core.Results;
 
 namespace Order.Domain.Entity
 {
-    public class Orders : BaseEntity
+    public class OrderEntity : BaseEntity
     {
         public Guid Id { get; set; }
         public Guid ProductId { get; set; }
@@ -15,22 +15,22 @@ namespace Order.Domain.Entity
         public decimal Price { get; set; }
         public decimal Quantity { get; set; }
 
-        public static Result<Orders> Create(Guid productId, string productName, decimal price, decimal quantity)
+        public static Result<OrderEntity> Create(Guid productId, string productName, decimal price, decimal quantity)
         {
             if (quantity <= 0)
             {
-                return Result.Failure<Orders>(new Error("Product.InvalidStockQuantity", "Quantity must be greater than zero."));
+                return Result.Failure<OrderEntity>(new Error("Product.InvalidStockQuantity", "Quantity must be greater than zero."));
             }
             if (price <= 0)
             {
-                return Result.Failure<Orders>(new Error("Product.InvalidPrice", "Price must be greater than zero."));
+                return Result.Failure<OrderEntity>(new Error("Product.InvalidPrice", "Price must be greater than zero."));
             }
             if (string.IsNullOrWhiteSpace(productName))
             {
-                return Result.Failure<Orders>(new Error("Product.InvalidName", "Product name cannot be null or empty."));
+                return Result.Failure<OrderEntity>(new Error("Product.InvalidName", "Product name cannot be null or empty."));
             }
 
-            var order = new Orders
+            var order = new OrderEntity
             {
                 Id = Guid.NewGuid(),
                 ProductId = productId,

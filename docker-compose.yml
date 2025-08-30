@@ -1,5 +1,29 @@
 #version: '3.7'
 services:
+  auth.services.api:
+    image: auth.services
+    container_name: auth.services.api
+    build:
+      context: ./src/AuthService
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 5300:8080     
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+
+  apigateway.services.api:
+    image: apigateway.services
+    container_name: apigateway.services.api
+    build:
+      context: ./src/ApiGatewayService
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 5200:8080     
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+
   order.services.api:
     image: order.services
     container_name: order.services.api
@@ -8,7 +32,7 @@ services:
       dockerfile: Dockerfile
     restart: always
     ports:
-      - 5000:8080     
+      - 5168:8080     
     environment:
       ASPNETCORE_ENVIRONMENT: "Development"
 
@@ -20,7 +44,7 @@ services:
       dockerfile: Dockerfile
     restart: always
     ports:
-      - 6000:8080    
+      - 5100:8080    
     environment:
       ASPNETCORE_ENVIRONMENT: "Development" 
 

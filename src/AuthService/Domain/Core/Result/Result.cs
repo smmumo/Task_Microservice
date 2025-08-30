@@ -15,15 +15,15 @@ namespace AuthService.Domain.Core.Result;
         /// <param name="error">The error.</param>
         protected Result(bool isSuccess, Error error)
         {
-            if (isSuccess && error != Error.None)
-            {
-                throw new InvalidOperationException();
-            }
+            // if (isSuccess && error != Error.None)
+            // {
+            //     throw new InvalidOperationException();
+            // }
 
-            if (!isSuccess && error == Error.None)
-            {
-                throw new InvalidOperationException();
-            }
+            // if (!isSuccess && error == Error.None)
+            // {
+            //     throw new InvalidOperationException();
+            // }
 
             IsSuccess = isSuccess;
             Error = error;

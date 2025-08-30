@@ -8,9 +8,9 @@ using Order.Domain.Entity;
 
 namespace Infrastructure.Persistence.Configuration
 {
-    public class Order : IEntityTypeConfiguration<Orders>
+    public class Order : IEntityTypeConfiguration<OrderEntity>
     {
-        public void Configure(EntityTypeBuilder<Orders> builder)
+        public void Configure(EntityTypeBuilder<OrderEntity> builder)
         {
             builder.Property(e => e.Id)
                 .HasColumnName("Id");

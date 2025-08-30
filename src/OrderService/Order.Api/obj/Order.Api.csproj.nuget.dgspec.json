@@ -293,10 +293,6 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "MailKit": {
-              "target": "Package",
-              "version": "[4.6.0, )"
-            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[8.0.6, )"
@@ -304,6 +300,14 @@
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[9.0.8, )"
+            },
+            "Microsoft.Extensions.Http.Polly": {
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
+            "Polly": {
+              "target": "Package",
+              "version": "[8.6.3, )"
             },
             "RabbitMQ.Client": {
               "target": "Package",

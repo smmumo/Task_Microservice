@@ -1,4 +1,6 @@
-﻿namespace Infrastructure.Messaging.Settings
+﻿
+
+namespace Infrastructure.Messaging.Settings
 {
     /// <summary>
     /// Represents the message broker settings.

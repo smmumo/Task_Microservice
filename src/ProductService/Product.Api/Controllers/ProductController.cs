@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Product.Api.Contracts;
 using Product.Application.Abstractions.Messaging;
@@ -15,13 +15,12 @@ using Product.Domain.Core;
 namespace Product.Api.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("products")]
+//[Authorize]
 public class ProductsController : ControllerBase
 {
     private readonly IQueryDispatcher _queryDispatcher;
-    private readonly ICommandDispatcher _commandDispatcher;
-    // private readonly IQueryHandler<GetProductByIdQuery, ProductDto?> _queryHandler;
-    // private readonly ICommandHandler<CreateProductCommand, Result> _commandHandler;
+    private readonly ICommandDispatcher _commandDispatcher;   
 
     public ProductsController(IQueryDispatcher queryDispatcher,
         ICommandDispatcher commandDispatcher)

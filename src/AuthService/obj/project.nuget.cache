@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ODNCieqYUofRD9CpKQqYenU+wryOfXQ/lTp1M3LzSOxnPPR1M6WvVg5Coc5wItBDnBVxTO25gOzR/Ytl46SngA==",
+  "dgSpecHash": "nxBa8DlUFgfDMlEEmlZn1nvijL7N1AAeZEeyXWwHpN/pYe/u5+12UsONwyJ47IzFSdTENFV/GHLUhhUJnzDNPQ==",
   "success": true,
   "projectFilePath": "/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/AuthService/AuthService.csproj",
   "expectedPackageFiles": [
+    "/home/smumo/.nuget/packages/fluentvalidation/12.0.0/fluentvalidation.12.0.0.nupkg.sha512",
     "/home/smumo/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/smumo/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/8.0.6/microsoft.aspnetcore.authentication.jwtbearer.8.0.6.nupkg.sha512",
     "/home/smumo/.nuget/packages/microsoft.aspnetcore.cryptography.internal/8.0.3/microsoft.aspnetcore.cryptography.internal.8.0.3.nupkg.sha512",

@@ -121,3 +121,6 @@
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/AuthService/obj/Debug/net8.0/AuthService.pdb
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/AuthService/obj/Debug/net8.0/AuthService.genruntimeconfig.cache
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/AuthService/obj/Debug/net8.0/ref/AuthService.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/AuthService/bin/Debug/net8.0/Serilog.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/AuthService/bin/Debug/net8.0/Serilog.Sinks.Console.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/AuthService/bin/Debug/net8.0/Serilog.Sinks.File.dll

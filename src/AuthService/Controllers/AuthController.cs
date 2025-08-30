@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AuthService.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("auth")]
 public class AuthController : ControllerBase
@@ -19,6 +20,7 @@ public class AuthController : ControllerBase
         _authenticationService = authenticationService;
     }
 
+    [AllowAnonymous]
     [HttpPost]
     [Route("authenticate")]
     public async Task<IActionResult> AuthenticateAsync([FromBody] LoginRequest request)
@@ -35,7 +37,7 @@ public class AuthController : ControllerBase
     [Authorize]
     [HttpPost]
     [Route("refreshtoken")]
-    public async Task<IActionResult> Refresh(RefreshTokenRequest token)
+    public async Task<IActionResult> Refresh([FromBody] RefreshTokenRequest token)
     {
         var response = await _authenticationService.GetRefreshToken(token);
 
@@ -50,7 +52,7 @@ public class AuthController : ControllerBase
     [AllowAnonymous]
     [HttpPost]
     [Route("logout")]
-    public async Task<IActionResult> Logout(RefreshTokenRequest token)
+    public async Task<IActionResult> Logout([FromBody] RefreshTokenRequest token)
     {
         if(token is null || string.IsNullOrEmpty(token.Refresh_Token))
         {

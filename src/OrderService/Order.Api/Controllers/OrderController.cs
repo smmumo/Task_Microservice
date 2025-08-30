@@ -13,7 +13,7 @@ using Order.Domain.Core.Results;
 namespace Order.Api.Controllers;
 
     [ApiController]
-    [Route("[controller]")]
+    [Route("orders")]
     public class OrdersController : ControllerBase
     {
         private readonly IQueryDispatcher _queryDispatcher;
@@ -49,7 +49,7 @@ namespace Order.Api.Controllers;
             return Ok(order);
         }
 
-        [HttpPost]
+        [HttpPost("create")]
         public async Task<IActionResult> CreateOrder(CreateOrderRequest request)
         {
             var command = new CreateOrderCommand(

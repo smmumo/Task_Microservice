@@ -6,6 +6,7 @@ using AuthService.Infrastructure.Persistence;
 using AuthService.Infrastructure.Repository;
 using AuthService.Infrastructure.Services;
 using AuthService.Interface;
+using AuthService.Interface.Cryptography;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -28,19 +29,22 @@ namespace AuthService.Extensions;
         
         services.AddScoped<IUnitOfWork>(serviceProvider => serviceProvider.GetRequiredService<AuthDbContext>());
 
+        //memory db for testing purpose
         services.AddDbContext<AuthDbContext>(
-            options => options.UseInMemoryDatabase("AuthDb"));         
+            options => options.UseInMemoryDatabase("AuthDb"));        
 
 
        services.AddScoped<IUserRepository, UserRepository>();
 
         services.AddScoped<IPasswordHashChecker, PasswordHasher>();
-        services.AddScoped<IPasswordHashChecker, PasswordHasher>();
+        services.AddScoped<IPasswordHasher, PasswordHasher>();
 
-        services.AddScoped<IUserRepository, UserRepository>();       
+        services.AddScoped<IUserRepository, UserRepository>();   
+         services.AddScoped<ITokenRespository, TokenRespository>();      
 
         services.AddScoped<IJwtProvider, JwtService>();
         services.AddScoped<IAuthenticationService, AuthenticationService>();
+        services.AddScoped<IUserService, UserService>();
 
         return services;
     }

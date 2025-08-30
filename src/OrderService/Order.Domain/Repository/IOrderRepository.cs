@@ -8,7 +8,7 @@ namespace Order.Domain.Repository
 {
     public interface IOrderRepository
     {
-        void Add(Orders order);
-        void Delete(Orders order);
+        void Add(OrderEntity order);
+        void Delete(OrderEntity order);
     }
 }

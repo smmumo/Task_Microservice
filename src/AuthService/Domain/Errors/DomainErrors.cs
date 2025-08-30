@@ -21,6 +21,7 @@ public static class DomainErrors
 
         public static Error DuplicateEmail => new Error("User.DuplicateEmail", "The specified email is already in use.");
         public static Error EmailNotUnique => new Error("User.EmailNotUnique", "The specified email is not unique.");
+        public static Error InvalidInput => new Error("User.InvalidInput", "The user input is invalid.");
     }
 
     /// <summary>

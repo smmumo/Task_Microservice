@@ -49,7 +49,7 @@ namespace Order.Application.CommandHandler.CreateOrder
                 return Result.Failure(new Error("Product.InvalidStockQuantity", "Insufficient stock for the requested quantity"));
             }
 
-            var order = Orders.Create(
+            var order = OrderEntity.Create(
                 request.ProductId,
                 product.ProductName,
                 request.TotalAmount,

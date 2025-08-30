@@ -11,13 +11,17 @@ using AuthService.Contracts;
 
 namespace  AuthService.Infrastructure.Services;
 
-public class JwtService(          
-            IConfiguration iconfiguration
-        ) : IJwtProvider
+public class JwtService : IJwtProvider
 {
-	private readonly IConfiguration _configuration = iconfiguration;  
-	private readonly string JWTSettingsSecurityKey = "apiauthenticationSecretKey2024secretkey";
-   
+	private readonly IConfiguration _configuration;
+	private readonly string JWTSettingsSecurityKey ;
+	private JwtSettingOptions jwtOptions;
+   public JwtService(IConfiguration iconfiguration)
+   {
+       _configuration = iconfiguration;
+	    jwtOptions = _configuration.GetSection("JwtSettings").Get<JwtSettingOptions>();
+       JWTSettingsSecurityKey = jwtOptions.SecurityKey;
+   }
     public ClaimsPrincipal GetPrincipalFromExpiredToken(string token)
 	{
 		var Key = Encoding.UTF8.GetBytes(JWTSettingsSecurityKey);
@@ -34,8 +38,11 @@ public class JwtService(
 		};
 
 		var tokenHandler = new JwtSecurityTokenHandler();
+
 		var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out SecurityToken securityToken);
+
 		JwtSecurityToken jwtSecurityToken = securityToken as JwtSecurityToken;
+
 		if (jwtSecurityToken == null || !jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
 		{
 			throw new SecurityTokenException("Invalid token");

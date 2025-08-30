@@ -9,6 +9,6 @@ namespace AuthService.Contracts
         string Name,
         string Email,
         string Password,
-        string Role,
+       // string Role,
         string ConfirmPassword);
 }

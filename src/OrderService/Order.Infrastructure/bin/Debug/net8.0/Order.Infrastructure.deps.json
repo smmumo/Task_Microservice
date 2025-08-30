@@ -1902,6 +1902,9 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.2",
           "Order.Domain": "1.0.0",
           "Scrutor": "6.0.1",
+          "Serilog": "4.3.0",
+          "Serilog.Sinks.Console": "6.0.0",
+          "Serilog.Sinks.File": "7.0.0",
           "System.Text.Json": "8.0.3"
         },
         "runtime": {

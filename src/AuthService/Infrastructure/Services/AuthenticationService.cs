@@ -16,23 +16,21 @@ public class AuthenticationService : IAuthenticationService
 {
     private readonly IUserRepository _userRepository;
     private readonly IPasswordHashChecker _passwordHashChecker;
-    private readonly IJwtProvider _jwtprovider;
-    private readonly ITokenService _tokenService;
+    private readonly IJwtProvider _jwtprovider;   
     private readonly IUnitOfWork _unitOfWork;
     private readonly ITokenRespository _tokenRespository;
     private readonly ILogger<AuthenticationService> _logger;
     public AuthenticationService(IUserRepository userRepository,
         IPasswordHashChecker passwordHashChecker,
         IJwtProvider jwtprovider,
-        ITokenService tokenService,
+      
         IUnitOfWork unitOfWork,
         ITokenRespository tokenRespository,
         ILogger<AuthenticationService> logger)
     {
         _userRepository = userRepository;
         _passwordHashChecker = passwordHashChecker;
-        _jwtprovider = jwtprovider;
-        _tokenService = tokenService;
+        _jwtprovider = jwtprovider;     
         _unitOfWork = unitOfWork;
         _tokenRespository = tokenRespository;
         _unitOfWork = unitOfWork;
@@ -81,7 +79,7 @@ public class AuthenticationService : IAuthenticationService
             return Result.Failure<TokenResponse>(DomainErrors.Authentication.InvalidToken);
         }
 
-        var savedRefreshToken = await _tokenService.GetSavedRefreshTokens(request.Refresh_Token);
+        var savedRefreshToken = await _tokenRespository.GetByRefreshTokenAsync(request.Refresh_Token);
 
         if (savedRefreshToken is null)
         {
@@ -89,7 +87,7 @@ public class AuthenticationService : IAuthenticationService
             return Result.Failure<TokenResponse>(DomainErrors.Authentication.InvalidToken);
         }
 
-        if (savedRefreshToken.Refresh_Token != request.Refresh_Token)
+        if (savedRefreshToken.RefreshToken != request.Refresh_Token)
         {
             return Result.Failure<TokenResponse>(DomainErrors.Authentication.InvalidToken);
         }

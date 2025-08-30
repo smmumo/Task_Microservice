@@ -13,45 +13,77 @@ using Order.Application;
 using Order.Application.CommandHandler.CreateOrder;
 using Order.Application.Data;
 using Order.Application.DTO;
+using Order.Application.Messaging;
 using Order.Application.QueryHandler;
 using Order.Application.Services;
 using Order.Domain.Core.Results;
 using Order.Domain.Repository;
+using Order.Infrastructure.Messaging;
 using Order.Infrastructure.Repository;
 using Order.Infrastructure.Services;
+using Polly;
+using Polly.Extensions.Http;
 
 
 namespace Infrastructure;
 
-    public static class DependencyInjection
+public static class DependencyInjection
+{
+    /// <summary>
+    /// Registers the necessary services with the DI framework.
+    /// </summary>
+    /// <param name="services">The service collection.</param>
+    /// <param name="configuration">The configuration.</param>
+    /// <returns>The same service collection.</returns>
+    public static IServiceCollection AddInfrastructure(this IServiceCollection services,
+                IConfiguration configuration)
     {
-        /// <summary>
-        /// Registers the necessary services with the DI framework.
-        /// </summary>
-        /// <param name="services">The service collection.</param>
-        /// <param name="configuration">The configuration.</param>
-        /// <returns>The same service collection.</returns>
-        public static IServiceCollection AddInfrastructure(this IServiceCollection services,
-                    IConfiguration configuration)
-        {
-            //services.AddOrderApplication();
-            
-            services.AddScoped<IDbContext>(serviceProvider => serviceProvider.GetRequiredService<OrderDbContext>());
-            services.AddScoped<IUnitOfWork>(serviceProvider => serviceProvider.GetRequiredService<OrderDbContext>());
+        //services.AddOrderApplication();
 
-            services.AddDbContext<OrderDbContext>(
-                options => options.UseInMemoryDatabase("OrderDb"));
-            
+        services.AddScoped<IDbContext>(serviceProvider => serviceProvider.GetRequiredService<OrderDbContext>());
+        services.AddScoped<IUnitOfWork>(serviceProvider => serviceProvider.GetRequiredService<OrderDbContext>());
 
-            services.AddScoped<IQueryDispatcher, QueryDispatcher>();
-            services.AddScoped<ICommandDispatcher, CommandDispatcher>();
-            services.AddScoped<IOrderRepository, OrderRepository>();
+        services.AddDbContext<OrderDbContext>(
+            options => options.UseInMemoryDatabase("OrderDb"));
 
-            services.AddScoped<ICommandHandler<CreateOrderCommand, Result>, CreateOrderCommandHandler>();
-            services.AddScoped<IQueryHandler<GetOrderByIdQuery, OrderDto?>, GetOrderByIdQueryHandler>();
-            services.AddScoped<IQueryHandler<GetOrdersQuery, List<OrderDto>>, GetOrdersQueryHandler>();
-            services.AddScoped<IProductService, ProductService>();
 
-            return services;
-        }
+        services.AddScoped<IQueryDispatcher, QueryDispatcher>();
+        services.AddScoped<ICommandDispatcher, CommandDispatcher>();
+        services.AddScoped<IOrderRepository, OrderRepository>();
+
+        services.AddScoped<ICommandHandler<CreateOrderCommand, Result>, CreateOrderCommandHandler>();
+        services.AddScoped<IQueryHandler<GetOrderByIdQuery, OrderDto?>, GetOrderByIdQueryHandler>();
+        services.AddScoped<IQueryHandler<GetOrdersQuery, List<OrderDto>>, GetOrdersQueryHandler>();       
+        
+        var retryPolicy = GetRetryPolicy();
+        var circuitBreakerPolicy = GetCircuitBreakerPolicy();
+
+        services.AddHttpClient<IProductService, ProductService>()
+            .SetHandlerLifetime(TimeSpan.FromMinutes(5))  
+            .AddPolicyHandler(retryPolicy)
+            .AddPolicyHandler(circuitBreakerPolicy);
+
+
+        //services.AddSingleton<IIntegrationEventPublisher, IntegrationEventPublisher>();
+
+        return services;
+    }
+
+   
+    // Todo: move to separate file
+    static IAsyncPolicy<HttpResponseMessage> GetRetryPolicy()
+    {
+        return HttpPolicyExtensions
+            .HandleTransientHttpError()
+            .OrResult(msg => msg.StatusCode == System.Net.HttpStatusCode.NotFound)
+            .WaitAndRetryAsync(6, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));
+    }
+        
+    // Todo: move to separate file
+    static IAsyncPolicy<HttpResponseMessage> GetCircuitBreakerPolicy()
+    {
+        return HttpPolicyExtensions
+            .HandleTransientHttpError()
+            .CircuitBreakerAsync(5, TimeSpan.FromSeconds(30));
+    }
     }

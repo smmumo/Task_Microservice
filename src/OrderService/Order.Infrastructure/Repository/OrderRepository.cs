@@ -15,14 +15,14 @@ namespace Order.Infrastructure.Repository
         {
             _dbContext = dbContext;
         }
-        public void Add(Orders order)
+        public void Add(OrderEntity order)
         {
-            _dbContext.Set<Orders>().Add(order);
+            _dbContext.Set<OrderEntity>().Add(order);
         }
 
-        public void Delete(Orders order)
+        public void Delete(OrderEntity order)
         {
-            _dbContext.Set<Orders>().Remove(order);
+            _dbContext.Set<OrderEntity>().Remove(order);
         }
     }
 }

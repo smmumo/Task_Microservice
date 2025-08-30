@@ -4,27 +4,28 @@ using System.Linq;
 using System.Threading.Tasks;
 using AuthService.Contracts;
 using AuthService.Domain;
-using AuthService.Domain.Core.Result;
+
 using AuthService.Domain.Errors;
 using AuthService.Domain.Repository;
 using AuthService.Interface;
 using AuthService.Interface.Cryptography;
 using Microsoft.EntityFrameworkCore;
-
+using AuthService.Domain.Core.Result;
+using AuthService.Validation;
 namespace AuthService.Infrastructure.Services
 {
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
-        private readonly IPasswordHasher _passwordHasher;          
+        private readonly IPasswordHasher _passwordHasher;
         private readonly IUnitOfWork _unitOfWork;
-        
-         private readonly ILogger<UserService> _logger;
-       public UserService(IUserRepository userRepository,
-            IPasswordHasher passwordHasher,
-            IUnitOfWork unitOfWork,
-            ILogger<UserService> logger
-          )
+
+        private readonly ILogger<UserService> _logger;
+        public UserService(IUserRepository userRepository,
+             IPasswordHasher passwordHasher,
+             IUnitOfWork unitOfWork,
+             ILogger<UserService> logger
+           )
         {
             _userRepository = userRepository;
             _passwordHasher = passwordHasher;
@@ -39,33 +40,51 @@ namespace AuthService.Infrastructure.Services
 
         public async Task<Result> CreateUser(CreateUserRequest request)
         {
+            var validationResult = await ValidateUserInput(request);
+
+            if (validationResult.IsFailure)
+            {
+                return validationResult;
+            }
+
             var userExist = await _userRepository.GetByEmailAsync(request.Email);
 
             if (userExist != null)
             {
-                _logger.LogWarning("Attempt to create a user with an existing email: {Email}", request.Email);
-                return Result.Failure<Guid>(DomainErrors.User.EmailNotUnique);
+                _logger.LogError("Attempt to create a user with an existing email: {Email}", request.Email);
+                return Result.Failure(DomainErrors.User.EmailNotUnique);
             }
 
-            var user = UserEntity.Create(               
-                request.Name,              
+            var user = UserEntity.Create(
+                request.Name,
                 request.Email,
                 _passwordHasher.HashPassword(request.Password)
             );
 
-            if (user.IsFailure)
-            {
-                _logger.LogError("User creation failed for email: {Email}. Error: {Error}", request.Email, user.Error);
-                return Result.Failure(user.Error);
-            }             
-
-            _userRepository.Add(user.Value);            
+            _userRepository.Add(user);
 
             await _unitOfWork.SaveChangesAsync();
-            
-             _logger.LogInformation("User created successfully: {Email}", request.Email);
 
-            return Result.Success(user.Value.Id);
+            _logger.LogInformation("User created successfully: {Email}", request.Email);
+
+            return Result.Success();
+        }
+
+        private async Task<Result> ValidateUserInput(CreateUserRequest request)
+        {
+            var validator = new CreateUserValidator();
+
+            var validationResult = await validator.ValidateAsync(request);
+
+            if (!validationResult.IsValid)
+            {
+                foreach (var error in validationResult.Errors)
+                {
+                    _logger.LogError("Validation error : {Error}", error.ErrorMessage);
+                }
+                return Result.Failure(DomainErrors.User.InvalidInput);
+            }
+            return Result.Success();
         }
     }
 }

@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace AuthService.Controllers
 {
     [ApiController]
-    [Route("user")]
+    [Route("users")]
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
@@ -21,8 +21,7 @@ namespace AuthService.Controllers
             _userService = userService;
         }
 
-        [HttpPost]
-        [Route("create")]
+        [HttpPost("create")]       
         public async Task<IActionResult> CreateAsync([FromBody] CreateUserRequest request)
         {
             var response = await _userService.CreateUser(request);
