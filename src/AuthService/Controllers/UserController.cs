@@ -30,7 +30,7 @@ namespace AuthService.Controllers
             {
                 return BadRequest(response.Error);
             }
-            return Ok();
+            return StatusCode(201);
         }
     }
 }

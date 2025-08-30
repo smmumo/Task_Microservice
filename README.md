@@ -6,17 +6,23 @@ Task_Microservice Using Clean Architecture AND CQRS
 
 docker compose up -d
 
-# access individual service 
+# access service  using api gateway
 
 # auth service
-create user to test authorization
-http://apigatewayserviceapi:5200/auth/swagger/index.html
-
+http://localhost:5200/auth/swagger/index.html
 # to access order service
-http://apigatewayserviceapi:5200/orders/swagger/index.html
-
+http://localhost:5200/orders/swagger/index.html
 # to access product service 
-http://apigatewayserviceapi:5200/products/swagger/index.html
+http://localhost:5200/products/swagger/index.html
+
+
+# or access via individual port 
+# for auth service
+http://localhost:5300/swagger/index.html
+# for product service
+http://localhost:5100/swagger/index.html
+# for order
+http://localhost:5168/swagger/index.html
 
 
 Application: Contains CQRS command/query handlers and business logic.
@@ -33,5 +39,5 @@ Layer Tool / Library
 Framework .NET 8
 Docker, Docker Compose
 
-#docker compose up --build --force-recreate
+#docker compose up --build --force-recreate apigateway.services.api
 #docker compose up --force-recreate apigateway.services.api

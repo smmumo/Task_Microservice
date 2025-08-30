@@ -23,7 +23,7 @@ namespace Product.Application.QueryHandler
 
         public async Task<List<ProductDto>> Handle(GetProductsQuery query, CancellationToken cancellationToken)
         {
-            var products = await _dbContext.Set<Products>().ToListAsync(cancellationToken);
+            var products = await _dbContext.Set<Products>().AsNoTracking().ToListAsync(cancellationToken);
             return products.Select(product => new ProductDto(product.Id, product.ProductName, product.Quantity)).ToList();
         }
     }

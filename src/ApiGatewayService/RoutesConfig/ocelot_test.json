@@ -1,0 +1,153 @@
+
+{
+  "Routes": [
+    {      
+      "DownstreamScheme": "http",
+      "DownstreamPathTemplate": "/auth/authenticate",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "authserviceapi",
+          "Port": 5300
+        }
+      ],
+      "UpstreamPathTemplate": "/auth",
+      "UpstreamHttpMethod": ["POST"]
+    },
+    {     
+      "DownstreamScheme": "http",
+      "DownstreamPathTemplate": "/swagger/{everything}",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "authserviceapi",
+          "Port": 5300
+        }
+      ],
+      "UpstreamPathTemplate": "/auth/swagger/{everything}",
+      "UpstreamHttpMethod": ["GET"]
+    },
+    {
+      "UpstreamPathTemplate": "/users/create",
+      "UpstreamHttpMethod": ["Post"],
+      "DownstreamScheme": "http",
+      "DownstreamPathTemplate": "/auth/register",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "authserviceapi",
+          "Port": 5300
+        }
+      ]
+    },
+    
+  
+    {
+      "DownstreamPathTemplate": "/swagger/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "productserviceapi",
+          "Port": 5100
+        }
+      ],
+      "UpstreamPathTemplate": "/products/swagger/{everything}",
+      "UpstreamHttpMethod": [ "GET"]
+    },
+    {
+       "DownstreamPathTemplate": "/products",       
+       "DownstreamScheme": "http",  
+       "DownstreamHostAndPorts": [
+        {
+          "Host": "productserviceapi",
+          "Port": 5100
+        }
+      ],  
+      "UpstreamHttpMethod": [ "POST"],
+      "UpstreamPathTemplate": "/products",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "allowedScopes":[]
+      }     
+    },
+    {
+      "DownstreamPathTemplate": "/products/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "productserviceapi",
+          "Port":  5100
+        }
+      ],
+      "UpstreamPathTemplate": "/products/{id}",
+      "UpstreamHttpMethod": [ "GET"] 
+      
+    },
+    {
+      "DownstreamPathTemplate": "/products/{id}/stock",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "productserviceapi",
+          "Port":  5100
+        }
+      ],
+      "UpstreamPathTemplate": "/products/{id}/stock",
+      "UpstreamHttpMethod": [ "PUT"]
+    },
+
+
+    {
+      "DownstreamPathTemplate": "/swagger/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "orderserviceapi",
+          "Port": 5168
+        }
+      ],
+      "UpstreamPathTemplate": "/orders/swagger/{everything}",
+      "UpstreamHttpMethod": [ "GET"]
+    },
+    
+    {
+       "DownstreamPathTemplate": "/orders/create",       
+       "DownstreamScheme": "http",  
+       "DownstreamHostAndPorts": [
+        {
+          "Host": "orderserviceapi",
+          "Port": 5001
+        }
+      ],  
+      "UpstreamHttpMethod": [ "POST"],
+      "UpstreamPathTemplate": "/orders/create",  
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/orders/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "orderserviceapi",
+          "Port": 5168
+        }
+      ],
+      "UpstreamPathTemplate": "/orders/{id}",
+      "UpstreamHttpMethod": [ "GET"]
+    },
+    {
+      "DownstreamPathTemplate": "/orders",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "orderserviceapi",
+          "Port": 5168
+        }
+      ],
+      "UpstreamPathTemplate": "/orders",
+      "UpstreamHttpMethod": [ "GET"]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://apigatewayserviceapi:5200"
+  }
+}

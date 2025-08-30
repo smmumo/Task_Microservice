@@ -21,7 +21,7 @@ namespace Order.Infrastructure.Services;
         private readonly HttpClient _Httpclient;
         //private readonly string BaseUrl = "http://localhost:5100/Products" ;
         //using docker container
-        private readonly string BaseUrl = "http://product.services.api:6000/Products/";
+        private readonly string BaseUrl = "http://productserviceapi:8080/Products";
         private readonly ILogger<ProductService> _logger;
         public ProductService(HttpClient httpClient, ILogger<ProductService> logger)
         {
@@ -30,29 +30,39 @@ namespace Order.Infrastructure.Services;
         }
         public async Task<ProductDto?> GetProduct(Guid productId)
         {
-            string Url = $"{BaseUrl}/{productId}";
-
-            var httpResponse = await _Httpclient.GetAsync(Url);
-          
-
-            if (!httpResponse.IsSuccessStatusCode)
+            try
             {
-                _logger.LogError("Failed to retrieve product with ID {ProductId}", productId);
-                return null;
+                string Url = $"{BaseUrl}/{productId}";
+
+                var httpResponse = await _Httpclient.GetAsync(Url);
+
+
+                if (!httpResponse.IsSuccessStatusCode)
+                {
+                    _logger.LogError("Failed to retrieve product with ID {ProductId}", productId);
+                    return null;
+                }
+
+                var jsonResponse = await httpResponse.Content.ReadAsStringAsync();
+                var productResponse = JsonSerializer.Deserialize<ProductDto>(jsonResponse);
+
+                _logger.LogInformation(productResponse.ToJson());
+
+                _logger.LogInformation("Successfully retrieved product with ID {ProductId}", productId);
+                return productResponse;
+
             }
-
-            var jsonResponse = await httpResponse.Content.ReadAsStringAsync();
-            var productResponse = JsonSerializer.Deserialize<ProductDto>(jsonResponse);
-
-            _logger.LogInformation(productResponse.ToJson());
-
-            _logger.LogInformation("Successfully retrieved product with ID {ProductId}", productId);
-            return productResponse;
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while logging the attempt to retrieve product with ID {ProductId}", productId);
+                return null;
+            }            
 
         }   
 
         public async Task<bool> ReserveProduct(UpdateProductQuantityRequest updateProductQuantityRequest){
-
+             try
+             {
                 string url = $"{BaseUrl}/{updateProductQuantityRequest.ProductId}/stock";       
 
                 string reqParams = JsonSerializer.Serialize(updateProductQuantityRequest);
@@ -69,6 +79,13 @@ namespace Order.Infrastructure.Services;
                     return false;
                 }
                 return true;
+             }
+             catch (System.Exception ex)
+             {
+                _logger.LogError("Exception occurred while reserving product with ID {ProductId}", updateProductQuantityRequest.ProductId);
+               return false;                
+             }   
+                
          }
 
     

@@ -5,12 +5,10 @@
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Order.Api.runtimeconfig.json
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Order.Api.dll
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Order.Api.pdb
-/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/BouncyCastle.Cryptography.dll
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/FluentValidation.dll
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/FluentValidation.AspNetCore.dll
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/FluentValidation.DependencyInjectionExtensions.dll
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Humanizer.dll
-/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/MailKit.dll
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.Internal.dll
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
@@ -60,7 +58,6 @@
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Microsoft.Win32.SystemEvents.dll
-/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/MimeKit.dll
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Mono.TextTemplating.dll
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Newtonsoft.Json.dll
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/NuGet.Common.dll
@@ -272,3 +269,14 @@
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Serilog.Sinks.Console.dll
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Serilog.Sinks.File.dll
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/obj/Debug/net8.0/Order.Api.sourcelink.json
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Microsoft.Extensions.Configuration.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Microsoft.Extensions.Configuration.Binder.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Microsoft.Extensions.Diagnostics.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Microsoft.Extensions.Http.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Microsoft.Extensions.Http.Polly.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Polly.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Polly.Core.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Polly.Extensions.Http.dll

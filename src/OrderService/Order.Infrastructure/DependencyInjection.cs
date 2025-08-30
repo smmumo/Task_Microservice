@@ -55,14 +55,15 @@ public static class DependencyInjection
         services.AddScoped<IQueryHandler<GetOrderByIdQuery, OrderDto?>, GetOrderByIdQueryHandler>();
         services.AddScoped<IQueryHandler<GetOrdersQuery, List<OrderDto>>, GetOrdersQueryHandler>();       
         
-        var retryPolicy = GetRetryPolicy();
-        var circuitBreakerPolicy = GetCircuitBreakerPolicy();
+        //var retryPolicy = GetRetryPolicy();
+        //var circuitBreakerPolicy = GetCircuitBreakerPolicy();
 
-        services.AddHttpClient<IProductService, ProductService>()
-            .SetHandlerLifetime(TimeSpan.FromMinutes(5))  
-            .AddPolicyHandler(retryPolicy)
-            .AddPolicyHandler(circuitBreakerPolicy);
+        services.AddHttpClient<IProductService, ProductService>() ;
 
+        // services.AddHttpClient<IProductService, ProductService>()
+        //     .SetHandlerLifetime(TimeSpan.FromMinutes(5))  
+        //     .AddPolicyHandler(retryPolicy)
+        //     .AddPolicyHandler(circuitBreakerPolicy);
 
         //services.AddSingleton<IIntegrationEventPublisher, IntegrationEventPublisher>();
 
@@ -76,7 +77,7 @@ public static class DependencyInjection
         return HttpPolicyExtensions
             .HandleTransientHttpError()
             .OrResult(msg => msg.StatusCode == System.Net.HttpStatusCode.NotFound)
-            .WaitAndRetryAsync(6, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));
+            .WaitAndRetryAsync(3, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));
     }
         
     // Todo: move to separate file
@@ -84,6 +85,6 @@ public static class DependencyInjection
     {
         return HttpPolicyExtensions
             .HandleTransientHttpError()
-            .CircuitBreakerAsync(5, TimeSpan.FromSeconds(30));
+            .CircuitBreakerAsync(2, TimeSpan.FromSeconds(30));
     }
     }

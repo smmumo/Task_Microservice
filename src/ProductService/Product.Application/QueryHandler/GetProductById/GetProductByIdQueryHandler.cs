@@ -29,7 +29,8 @@ namespace Product.Application.QueryHandler
         {
             var product = await _dbContext.Set<Products>()
                  .Where(p => p.Id == query.ProductId)
-                .FirstOrDefaultAsync(cancellationToken);
+                 .AsNoTracking()
+                 .FirstOrDefaultAsync(cancellationToken);
 
             return product is not null ? new ProductDto(product.Id, product.ProductName, product.Quantity) : null;
         }

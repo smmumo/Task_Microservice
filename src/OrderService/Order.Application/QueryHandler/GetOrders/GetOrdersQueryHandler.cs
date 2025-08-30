@@ -21,7 +21,7 @@ namespace Order.Application.QueryHandler
 
         public async Task<List<OrderDto>> Handle(GetOrdersQuery query, CancellationToken cancellationToken)
         {
-            var orders = await _dbContext.Set<Orders>().ToListAsync(cancellationToken);
+            var orders = await _dbContext.Set<OrderEntity>().ToListAsync(cancellationToken);
             return orders.Select(order => new OrderDto(order.Id, order.ProductName, order.Quantity, order.Price)).ToList();
         }
     }

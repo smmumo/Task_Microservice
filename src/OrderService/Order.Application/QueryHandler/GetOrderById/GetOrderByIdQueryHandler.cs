@@ -24,9 +24,10 @@ namespace Order.Application.QueryHandler
 
         public async Task<OrderDto?> Handle(GetOrderByIdQuery query, CancellationToken cancellationToken)
         {
-            var order = await _dbContext.Set<Orders>()
+            var order = await _dbContext.Set<OrderEntity>()
                  .Where(o => o.Id == query.OrderId)
-                .FirstOrDefaultAsync(cancellationToken);
+                 .AsNoTracking()
+                .FirstOrDefaultAsync(cancellationToken) ;
               
             //await _orderRepository.GetByIdAsync(query.OrderId, cancellationToken);
             return order is not null ? new OrderDto(order.Id, order.ProductName, order.Quantity, order.Price) : null;

@@ -7,7 +7,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "authserviceapi",
-          "Port": 5300
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/auth",
@@ -19,7 +19,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "authserviceapi",
-          "Port": 5300
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/auth/swagger/{everything}",
@@ -29,11 +29,11 @@
       "UpstreamPathTemplate": "/users/create",
       "UpstreamHttpMethod": ["Post"],
       "DownstreamScheme": "http",
-      "DownstreamPathTemplate": "/auth/register",
+      "DownstreamPathTemplate": "/users/create",
       "DownstreamHostAndPorts": [
         {
           "Host": "authserviceapi",
-          "Port": 5300
+          "Port": 8080
         }
       ]
     },
@@ -45,7 +45,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "productserviceapi",
-          "Port": 5100
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/products/swagger/{everything}",
@@ -57,7 +57,7 @@
        "DownstreamHostAndPorts": [
         {
           "Host": "productserviceapi",
-          "Port": 5100
+          "Port": 8080
         }
       ],  
       "UpstreamHttpMethod": [ "POST"],
@@ -73,7 +73,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "productserviceapi",
-          "Port":  5100
+          "Port":  8080
         }
       ],
       "UpstreamPathTemplate": "/products/{id}",
@@ -86,7 +86,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "productserviceapi",
-          "Port":  5100
+          "Port":  8080
         }
       ],
       "UpstreamPathTemplate": "/products/{id}/stock",
@@ -100,7 +100,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "orderserviceapi",
-          "Port": 5168
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/orders/swagger/{everything}",
@@ -113,7 +113,7 @@
        "DownstreamHostAndPorts": [
         {
           "Host": "orderserviceapi",
-          "Port": 5001
+          "Port": 8080
         }
       ],  
       "UpstreamHttpMethod": [ "POST"],
@@ -128,7 +128,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "orderserviceapi",
-          "Port": 5168
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/orders/{id}",
@@ -140,7 +140,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "orderserviceapi",
-          "Port": 5168
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/orders",
