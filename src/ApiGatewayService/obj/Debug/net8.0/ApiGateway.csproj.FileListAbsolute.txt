@@ -132,7 +132,4 @@
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/ApiGatewayService/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/ApiGatewayService/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/ApiGatewayService/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
-/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/ApiGatewayService/bin/Debug/net8.0/RoutesConfig/ocelot.auth.json
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/ApiGatewayService/bin/Debug/net8.0/RoutesConfig/ocelot.json
-/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/ApiGatewayService/bin/Debug/net8.0/RoutesConfig/ocelot.order.json
-/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/ApiGatewayService/bin/Debug/net8.0/RoutesConfig/ocelot.product.json

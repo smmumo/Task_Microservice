@@ -6,7 +6,7 @@
       "DownstreamPathTemplate": "/auth/authenticate",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "authserviceapi",
           "Port": 5300
         }
       ],
@@ -18,21 +18,21 @@
       "DownstreamPathTemplate": "/swagger/{everything}",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "authserviceapi",
           "Port": 5300
         }
       ],
-      "UpstreamPathTemplate": "/users/swagger/{everything}",
+      "UpstreamPathTemplate": "/auth/swagger/{everything}",
       "UpstreamHttpMethod": ["GET"]
     },
     {
       "UpstreamPathTemplate": "/users/create",
       "UpstreamHttpMethod": ["Post"],
       "DownstreamScheme": "http",
-      "DownstreamPathTemplate": "/users/create",
+      "DownstreamPathTemplate": "/auth/register",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "authserviceapi",
           "Port": 5300
         }
       ]
@@ -44,7 +44,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "productserviceapi",
           "Port": 5100
         }
       ],
@@ -56,7 +56,7 @@
        "DownstreamScheme": "http",  
        "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "productserviceapi",
           "Port": 5100
         }
       ],  
@@ -72,7 +72,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "productserviceapi",
           "Port":  5100
         }
       ],
@@ -85,7 +85,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "productserviceapi",
           "Port":  5100
         }
       ],
@@ -99,7 +99,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "orderserviceapi",
           "Port": 5168
         }
       ],
@@ -112,7 +112,7 @@
        "DownstreamScheme": "http",  
        "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "orderserviceapi",
           "Port": 5001
         }
       ],  
@@ -127,7 +127,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "orderserviceapi",
           "Port": 5168
         }
       ],
@@ -139,7 +139,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "orderserviceapi",
           "Port": 5168
         }
       ],
@@ -148,6 +148,6 @@
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:5200"
+    "BaseUrl": "http://apigatewayserviceapi:5200"
   }
 }

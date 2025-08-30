@@ -2,7 +2,7 @@
 services:
   auth.services.api:
     image: auth.services
-    container_name: auth.services.api
+    container_name: authserviceapi
     build:
       context: ./src/AuthService
       dockerfile: Dockerfile
@@ -14,7 +14,7 @@ services:
 
   apigateway.services.api:
     image: apigateway.services
-    container_name: apigateway.services.api
+    container_name: apigatewayserviceapi
     build:
       context: ./src/ApiGatewayService
       dockerfile: Dockerfile
@@ -26,7 +26,7 @@ services:
 
   order.services.api:
     image: order.services
-    container_name: order.services.api
+    container_name: orderserviceapi
     build:
       context: ./src/OrderService
       dockerfile: Dockerfile
@@ -38,7 +38,7 @@ services:
 
   product.services.api:
     image: product.services
-    container_name: product.services.api
+    container_name: productserviceapi
     build:
       context: ./src/ProductService
       dockerfile: Dockerfile
@@ -50,8 +50,8 @@ services:
 
   task.service.queue:
     image: rabbitmq:management
-    container_name: Task.Service.Queue
-    hostname: task-service-queue
+    container_name: rabbitmqmanagementservice
+    hostname: rabbitmqmanagementservice
     volumes:
         - ./.containers/queue/data/:/var/lib/rabbitmq
         - ./.containers/queue/log/:/var/log/rabbitmq

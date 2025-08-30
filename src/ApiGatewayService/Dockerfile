@@ -17,6 +17,7 @@ FROM ubuntu/dotnet-aspnet:8.0-24.04_stable
 WORKDIR /app
 COPY --from=builder /app ./
 
+ENV ASPNETCORE_ENVIRONMENT=Development
 ENV PORT 8080
 EXPOSE 8080
 
