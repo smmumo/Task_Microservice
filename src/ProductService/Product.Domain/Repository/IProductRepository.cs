@@ -9,9 +9,9 @@ namespace Product.Domain.Repository
 {
     public interface IProductRepository
     {
-        void Add(Products product);
-        void Delete(Products product);
-        Task<Products?> GetByIdAsync(Guid id);
-        void Update(Products product);
+        void Add(ProductEntity product);
+        void Delete(ProductEntity product);
+        Task<ProductEntity?> GetByIdAsync(Guid id);
+        void Update(ProductEntity product);
     }
 }

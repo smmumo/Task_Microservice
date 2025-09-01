@@ -16,24 +16,24 @@ namespace Product.Infrastructure.Repository
         {
             _dbContext = dbContext;
         }
-        public void Add(Products product)
+        public void Add(ProductEntity product)
         {
-            _dbContext.Set<Products>().Add(product);
+            _dbContext.Set<ProductEntity>().Add(product);
         }
 
-        public void Delete(Products product)
+        public void Delete(ProductEntity product)
         {
-            _dbContext.Set<Products>().Remove(product);
+            _dbContext.Set<ProductEntity>().Remove(product);
         }
 
-        public async Task<Products?> GetByIdAsync(Guid id)
+        public async Task<ProductEntity?> GetByIdAsync(Guid id)
         {
-            return await _dbContext.Set<Products>().FindAsync(id);
+            return await _dbContext.Set<ProductEntity>().FindAsync(id);
         }
 
-        public void Update(Products product)
+        public void Update(ProductEntity product)
         {
-            _dbContext.Set<Products>().Update(product);
+            _dbContext.Set<ProductEntity>().Update(product);
         }
     }
 }

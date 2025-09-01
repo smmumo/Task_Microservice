@@ -7,11 +7,26 @@
 
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.8" />
      <PackageReference Include="Scrutor" Version="6.0.1" />
+
+     
   </ItemGroup>
 
 <ItemGroup>
   <ProjectReference Include="..\Product.Domain\Product.Domain.csproj" />
   <ProjectReference Include="..\Product.Application\Product.Application.csproj" />
+</ItemGroup>
+
+<ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.55.0" />
+    
+    <PackageReference Include="Grpc.Tools" Version="2.72.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+</ItemGroup>
+
+<ItemGroup>
+    <Protobuf Include="Proto\product.proto" GrpcServices="Server" />
 </ItemGroup>
 
   <PropertyGroup>

@@ -269,3 +269,10 @@
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/ProductService/Product.Api/obj/Debug/net8.0/Product.Api.pdb
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/ProductService/Product.Api/obj/Debug/net8.0/Product.Api.genruntimeconfig.cache
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/ProductService/Product.Api/obj/Debug/net8.0/ref/Product.Api.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/ProductService/Product.Api/bin/Debug/net8.0/Google.Protobuf.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/ProductService/Product.Api/bin/Debug/net8.0/Grpc.AspNetCore.Server.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/ProductService/Product.Api/bin/Debug/net8.0/Grpc.AspNetCore.Server.ClientFactory.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/ProductService/Product.Api/bin/Debug/net8.0/Grpc.Core.Api.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/ProductService/Product.Api/bin/Debug/net8.0/Grpc.Net.Client.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/ProductService/Product.Api/bin/Debug/net8.0/Grpc.Net.ClientFactory.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/ProductService/Product.Api/bin/Debug/net8.0/Grpc.Net.Common.dll

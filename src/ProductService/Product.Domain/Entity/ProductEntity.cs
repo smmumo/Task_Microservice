@@ -6,25 +6,25 @@ using Product.Domain.Core;
 
 namespace Product.Domain.Entity
 {
-    public class Products : BaseEntity
+    public class ProductEntity : BaseEntity
     {
         public Guid Id { get; set; }
         public string ProductName { get; set; } = null!;
         public decimal Quantity { get; set; }
 
-        public static Result<Products> Create(string productName, decimal quantity)
+        public static Result<ProductEntity> Create(string productName, decimal quantity)
         {
             if (quantity <= 0)
             {
-                return Result.Failure<Products>(new Error("Product.InvalidStockQuantity", "Quantity must be greater than zero."));
+                return Result.Failure<ProductEntity>(new Error("Product.InvalidStockQuantity", "Quantity must be greater than zero."));
             }
 
             if (string.IsNullOrWhiteSpace(productName))
             {
-                return Result.Failure<Products>(new Error("Product.InvalidName", "Product name cannot be null or empty."));
+                return Result.Failure<ProductEntity>(new Error("Product.InvalidName", "Product name cannot be null or empty."));
             }
 
-            var product = new Products
+            var product = new ProductEntity
             {
                 Id = Guid.NewGuid(),
                 ProductName = productName,

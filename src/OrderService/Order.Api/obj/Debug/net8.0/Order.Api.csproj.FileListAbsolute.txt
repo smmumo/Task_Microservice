@@ -280,3 +280,10 @@
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Polly.dll
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Polly.Core.dll
 /home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Polly.Extensions.Http.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Google.Protobuf.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Grpc.AspNetCore.Server.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Grpc.AspNetCore.Server.ClientFactory.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Grpc.Core.Api.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Grpc.Net.Client.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Grpc.Net.ClientFactory.dll
+/home/smumo/Projects/AVB-PROJECTS/Task_Microservice/src/OrderService/Order.Api/bin/Debug/net8.0/Grpc.Net.Common.dll

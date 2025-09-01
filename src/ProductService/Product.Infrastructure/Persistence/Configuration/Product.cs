@@ -9,9 +9,9 @@ using Product.Domain.Entity;
 
 namespace Infrastructure.Persistence.Configuration
 {
-    public class Product : IEntityTypeConfiguration<Products>
+    public class Product : IEntityTypeConfiguration<ProductEntity>
     {
-        public void Configure(EntityTypeBuilder<Products> builder)
+        public void Configure(EntityTypeBuilder<ProductEntity> builder)
         {
             builder.Property(e => e.Id)
                 .HasColumnName("Id");

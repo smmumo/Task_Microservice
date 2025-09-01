@@ -23,11 +23,12 @@ namespace Order.Infrastructure.Services;
         //using docker container
         private readonly string BaseUrl = "http://productserviceapi:8080/Products";
         private readonly ILogger<ProductService> _logger;
+        //private readonly ProductGrpcClient _productGrpcClient;
         public ProductService(HttpClient httpClient, ILogger<ProductService> logger)
-        {
-            _Httpclient = httpClient;
-            _logger = logger;
-        }
+    {
+        _Httpclient = httpClient;
+        _logger = logger;
+    }
         public async Task<ProductDto?> GetProduct(Guid productId)
         {
             try

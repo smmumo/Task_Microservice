@@ -24,7 +24,7 @@ namespace Product.Application.CommandHandler.CreateProduct
 
         public async Task<Result> Handle(CreateProductCommand request, CancellationToken cancellationToken)
         {
-            var product = Products.Create(
+            var product = ProductEntity.Create(
                 request.ProductName,
                 request.Quantity
             );

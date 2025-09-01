@@ -27,7 +27,7 @@ namespace Product.Application.QueryHandler
 
         public async Task<ProductDto?> Handle(GetProductByIdQuery query, CancellationToken cancellationToken)
         {
-            var product = await _dbContext.Set<Products>()
+            var product = await _dbContext.Set<ProductEntity>()
                  .Where(p => p.Id == query.ProductId)
                  .AsNoTracking()
                  .FirstOrDefaultAsync(cancellationToken);

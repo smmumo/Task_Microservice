@@ -18,11 +18,13 @@ using Order.Application.QueryHandler;
 using Order.Application.Services;
 using Order.Domain.Core.Results;
 using Order.Domain.Repository;
+
 using Order.Infrastructure.Messaging;
 using Order.Infrastructure.Repository;
 using Order.Infrastructure.Services;
 using Polly;
 using Polly.Extensions.Http;
+using ProductApiClient;
 
 
 namespace Infrastructure;
@@ -66,6 +68,13 @@ public static class DependencyInjection
         //     .AddPolicyHandler(circuitBreakerPolicy);
 
         //services.AddSingleton<IIntegrationEventPublisher, IntegrationEventPublisher>();
+
+        //use grpc , instead of http
+        services.AddScoped<IProductGrpcService, ProductGrpcService>()
+        .AddGrpcClient<ProductGrpc.ProductGrpcClient>((services, options) =>
+        {
+            options.Address = new Uri("https://productserviceapi:5100");
+        });
 
         return services;
     }
